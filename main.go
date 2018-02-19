@@ -31,6 +31,7 @@ func main() {
 	}
 
 	log.SetFormatter(&log.JSONFormatter{})
+	log.SetLevel(log.DebugLevel) // default is Info
 
 	log.AddHook(hook)
 

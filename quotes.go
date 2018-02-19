@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"io/ioutil"
 	"log"
 	"math/rand"
 	"time"
@@ -23,7 +22,8 @@ type Quotes struct {
 func NewQuotes() *Quotes {
 	q := &Quotes{}
 
-	b, err := ioutil.ReadFile(QUOTEFILE)
+	//	b, err := ioutil.ReadFile(QUOTEFILE)
+	b, err := Asset("zippy.json")
 
 	if err != nil {
 		log.Fatalf("error reading quote file : %s", QUOTEFILE)
